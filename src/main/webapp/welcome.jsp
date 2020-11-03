@@ -15,7 +15,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <jsp:include page="partials/head.jsp"></jsp:include>
 </head>
 <body>
 <%@ include file="partials/navbar.jsp" %>
@@ -92,6 +92,6 @@
 
     </c:forEach>
 </ul>
-
+<jsp:include page="partials/scripts.jsp"></jsp:include>
 </body>
 </html>
