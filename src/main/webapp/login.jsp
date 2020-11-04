@@ -17,10 +17,12 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <jsp:include page="partials/head.jsp">
+        <jsp:param name="title" value="Login Page" />
+    </jsp:include>
 </head>
 <body>
-
+<jsp:include page="partials/navbar.jsp" />
 <div class="container">
     <h1>Please Log In</h1>
     <form action="/login.jsp" method="POST">
