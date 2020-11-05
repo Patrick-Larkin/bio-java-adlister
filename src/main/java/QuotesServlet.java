@@ -9,17 +9,17 @@ import java.util.List;
 
 @WebServlet(name = "QuotesServlet", urlPatterns = "/quotes")
 public class QuotesServlet extends HttpServlet {
-    private Quotes quotesMngr;
+    private Quotes quotesManager;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("quotes", quotesMngr.all());
+        request.setAttribute("quotes", quotesManager.all());
         request.getRequestDispatcher("/quotes.jsp").forward(request, response);
     }
 
     @Override
     public void init(){
-        quotesMngr = new ListQuotes();
+        quotesManager = QuotesDAOFactory.getQuotesManager();
     }
 }

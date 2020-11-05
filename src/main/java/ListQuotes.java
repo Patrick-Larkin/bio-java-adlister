@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListQuotes implements Quotes {
-    private List<Quote> quotes;
+    private static List<Quote> quotes;
 
     public ListQuotes(){
         init();
@@ -39,11 +39,16 @@ public class ListQuotes implements Quotes {
         // quotes.remove(quote)
     }
 
-    private void init() {
+    private List<Quote> getQuotes() {
+    // This is a Singleton Pattern
         if (quotes == null) {
             quotes = new ArrayList<>();
         }
-        if (quotes.isEmpty()) {
+        return quotes;
+    }
+
+    private void init() {
+        if (getQuotes().isEmpty()) {
             quotes.add(new Quote("Douglas", "Adams",    "Time is an illusion. Lunchtime doubly so."));
             quotes.add(new Quote("Mark",    "Twain",    "Clothes make the man. Naked people have little or no influence on society."));
             quotes.add(new Quote("Kurt",    "Vonnegut", "The universe is a big place, perhaps the biggest."));
