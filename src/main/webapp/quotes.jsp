@@ -15,6 +15,7 @@
 <h1>Quotes</h1>
 <ul>
     <c:forEach var="quote" items="${quotes}">
+        <p>${quote.id}</p>
         <q>${quote.content}</q>
         -${quote.authorFirstName} ${quote.authorLastName}
         <hr>

@@ -1,4 +1,8 @@
-public class Quote {
+import java.io.Serializable;
+
+public class Quote implements Serializable {
+    private static long quoteCount = 0;
+
     private long id;
     private String authorFirstName;
     private String authorLastName;
@@ -7,6 +11,8 @@ public class Quote {
     public Quote(){}
 
     public Quote(String first, String last, String quote){
+        quoteCount++;
+        this.id = quoteCount;
         this.authorFirstName = first;
         this.authorLastName = last;
         this.content = quote;
@@ -16,7 +22,7 @@ public class Quote {
         return id;
     }
 
-    protected void setId(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
