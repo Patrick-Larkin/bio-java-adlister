@@ -15,7 +15,7 @@ public class ViewProfileServlet extends HttpServlet {
         if(user == null) {
             response.sendRedirect("/login");
         } else {
-            request.getRequestDispatcher("/profile.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
         }
     }
 }
