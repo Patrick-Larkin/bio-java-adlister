@@ -10,6 +10,8 @@
 
     <div class="container">
         <h1>Viewing your profile.</h1>
+        <p>Is Admin: ${isAdmin}</p>
+        <p>Is Admin: ${sessionScope.get("isAdmin")}</p>
     </div>
 
 </body>
